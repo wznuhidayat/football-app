@@ -1,5 +1,5 @@
 <!doctype html>
-<html>
+<html class="scroll-smooth">
 
 <head>
   <meta charset="utf-8">
@@ -13,7 +13,7 @@
 </head>
 
 <body class="font-poppins">
-  <nav class="bg-gray-800 fixed inset-x-0" id="navbar">
+  <nav class="bg-gray-800 fixed inset-x-0 top-0 transition-all duration-500" id="navbar">
     <div class="container flex justify-between items-center mx-auto px-6 py-4 md:py-6">
       <div>
         <!-- <img src="{{ asset('images/pl-logo.png') }}" alt="" class="inline object-cover w-10 h-10 mr-3"> -->
@@ -51,9 +51,9 @@
     </div>
   </nav>
   <section class="h-[400px] md:h-[700px] bg-gradient-to-b from-gray-700 to-gray-900 py-32 md:py-64">
-    <div class="container mx-auto px-6 ">
-      <h1 class="text-3xl md:text-5xl font-bold text-white text-center">Best League In The World</h1>
-      <h2 class="text-lg md:text-2xl  font-medium text-white text-center mt-4">the most intense competition in which there are the best clubs in the world</h2>
+    <div class="container mx-auto px-6">
+      <h1 class="text-3xl md:text-5xl font-bold text-white text-center duration-300 ">Best League In The World</h1>
+      <h2 class="text-lg md:text-2xl  font-medium text-white text-center mt-4 duration-300 ">the most intense competition in which there are the best clubs in the world</h2>
       <div class="flex justify-center mt-4">
         <button class="px-10 py-2 bg-transparent border-solid border border-white text-white rounded-lg text-sm hover:bg-slate-100 hover:text-gray-900">Join Us</button>
       </div>
@@ -67,7 +67,7 @@
         <a href="" class="">View More</a>
       </div>
       <div class="md:flex sm:flex-wrap justify-between md:gap-6">
-        <div class="bg-slate-100 z-[-1] sm:w-full md:w-80 lg:96 xl:w-128 2xl:w-80 h-24 rounded-xl md:drop-shadow-md flex flex-col justify-center px-5 mb-4">
+        <div class="bg-slate-100 z-[-1] sm:w-full md:w-80 lg:96 xl:w-128 2xl:w-80 h-24 rounded-xl md:drop-shadow-md flex flex-col justify-center px-5 mb-4 ">
           <div class="pb-1 flex justify-between">
             <div>
               <img src="https://upload.wikimedia.org/wikipedia/id/0/0c/Liverpool_FC.svg" alt="" class="inline object-cover w-5 h-5 mr-2">
@@ -85,7 +85,7 @@
             <div>0</div>
           </div>
         </div>
-        <div class="bg-slate-100 z-[-1] sm:w-full md:w-80 lg:96 xl:w-128 2xl:w-80 h-24 rounded-xl md:drop-shadow-md flex flex-col justify-center px-5 mb-4">
+        <div class="bg-slate-100 z-[-1] sm:w-full md:w-80 lg:96 xl:w-128 2xl:w-80 h-24 rounded-xl md:drop-shadow-md flex flex-col justify-center px-5 mb-4 ">
           <div class="pb-1 flex justify-between">
             <div>
               <img src="https://upload.wikimedia.org/wikipedia/id/0/0c/Liverpool_FC.svg" alt="" class="inline object-cover w-5 h-5 mr-2">
@@ -146,10 +146,10 @@
   <section class="my-10">
     <div class="container mx-auto px-6">
       <div class="mb-8">
-        <h1 class="text-center text-2xl md:text-3xl font-bold ">Last Premier League Winner</h1>
+        <h1 class="text-center text-2xl md:text-3xl font-bold  js-scroll opacity-0 duration-500">Last Premier League Winner</h1>
       </div>
       <div class="xl:flex justify-between gap-8">
-        <div class="bg-slate-100 z-[-1] xl:w-1/2 rounded-xl md:drop-shadow-md p-8 mb-4 ">
+        <div class="bg-slate-100 z-[-1] xl:w-1/2 rounded-xl md:drop-shadow-md p-8 mb-4 js-scroll opacity-0 transition-all ease-in duration-500 ">
           <img src="{{ asset('images/winner.jpg') }}" alt="" class="object-cover w-full">
           <div class="flex justify-between">
             <div class="flex items-center">
@@ -166,7 +166,7 @@
             </div>
           </div>
         </div>
-        <div class="bg-slate-100 z-[-1] xl:w-1/2 rounded-xl md:drop-shadow-md p-8 mb-4 w-full">
+        <div class="bg-slate-100 z-[-1] xl:w-1/2 rounded-xl md:drop-shadow-md p-8 mb-4 js-scroll opacity-0 transition-all ease-in duration-500">
           <h1 class="text-xl">Last Record Winner </h1>
           <table class="table-auto w-full mt-5">
             <thead>
@@ -234,11 +234,11 @@
   </section>
   <section class="h-[450px] md:h-[600px] bg-gradient-to-b from-gray-700 to-gray-900 py-10 lg:py-24">
     <div class="container mx-auto px-10 py-5 lg:px-48 lg:py-10">
-      <h1 class="text-2xl md:text-3xl font-bold mb-4 text-white text-center md:text-left">No Room For Racism</h1>
-      <p class="tracking-wide text-md md:text-lg text-white">There is No Room For Racism. Anywhere. <br>
+      <h1 class="text-2xl md:text-3xl font-bold mb-4 text-white text-center md:text-left js-scroll opacity-0 duration-500">No Room For Racism</h1>
+      <p class="tracking-wide text-md md:text-lg text-white js-scroll opacity-0 duration-500">There is No Room For Racism. Anywhere. <br>
         Not online, not in the stands, not at home and not on the streets. <br>
         We all must come together as fans, as players and as clubs to combat discrimination wherever it exists in society.</p>
-      <p class="tracking-wide text-md md:text-lg text-white">Through No Room For Racism, the Premier League and its clubs work with fans, the FA, EFL, PFA, Kick It Out and the police to tackle racism on and off the pitch, promoting equality, diversity and inclusion across all areas of football.
+      <p class="tracking-wide text-md md:text-lg text-white js-scroll opacity-0 duration-500">Through No Room For Racism, the Premier League and its clubs work with fans, the FA, EFL, PFA, Kick It Out and the police to tackle racism on and off the pitch, promoting equality, diversity and inclusion across all areas of football.
         <br>
         Together we can all do more to make a positive impact.
         <br>
@@ -249,9 +249,9 @@
   <section>
     <div class="container mx-auto px-6 py-10">
       <div class="mb-8">
-        <h1 class="text-2xl md:text-3xl font-bold">Promotion Team</h1>
+        <h1 class="text-2xl md:text-3xl font-bold js-scroll opacity-0 duration-500">Promotion Team</h1>
       </div>
-      <div class="flex justify-around w-full bg-slate-100 rounded-xl p-5">
+      <div class="flex justify-around w-full bg-slate-100 rounded-xl p-5 js-scroll opacity-0 duration-500">
         <div class="px-5 py-4">
           <img src="{{ asset('images/norwich.png') }}" alt="" class="w-16 md:w-24 object-cover mx-auto">
           <h1 class="text-center text-lg md:text-xl mt-2">Norwich City</h1>
@@ -269,9 +269,9 @@
         </div>
       </div>
       <div class="mb-8 mt-10">
-        <h1 class="text-2xl md:text-3xl font-bold text-right">Relegation Team Last Season</h1>
+        <h1 class="text-2xl md:text-3xl font-bold text-right js-scroll opacity-0 duration-500">Relegation Team Last Season</h1>
       </div>
-      <div class="flex justify-around w-full bg-slate-100 rounded-xl p-5">
+      <div class="flex justify-around w-full bg-slate-100 rounded-xl p-5 js-scroll opacity-0 duration-500">
         <div class="px-5 py-4">
           <img src="{{ asset('images/fullham.png') }}" alt="" class="w-16 md:w-24 object-cover mx-auto">
           <h1 class="text-center text-lg md:text-xl mt-2">Fullham</h1>
@@ -329,41 +329,63 @@
   </footer>
 
 </body>
-<script>
+<script src="{{ asset('js/main.js') }}"></script>
+<!-- <script>
   function Menu(e) {
     let list = document.querySelector('ul');
     e.name === 'menu' ? (e.name = "close", list.classList.add('top-[80px]'), list.classList.add('opacity-100')) : (e.name = "menu", list.classList.remove('top-[80px]'), list.classList.remove('opacity-100'))
   }
   // var lastScrollTop = 0;
   // navbar = document.getElementById("#navbar");
-  // window.addEventListener("scroll",function(){
+  // window.addEventListener("scroll", function() {
   //   var scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-  //   if(scrollTop > lastScrollTop){
-  //       navbar.style.top = "-80px";
-  //   }else{
-  //       navbar.style.top = "0";
+  //   if (scrollTop > lastScrollTop) {
+  //     navbar.classList.add("opacity-100");
+  //   } else {
+  //     navbar.classList.remove("opacity-100");
   //   }
   //   lastScrollTop = scrollTop;
   // });
-  // const callback = function(entries) {
-  //   entries.forEach((entry) => {
-  //     console.log(entry);
+  const scrollElements = document.querySelectorAll(".js-scroll");
 
-  //     if (entry.isIntersecting) {
-  //       entry.target.classList.add("animate-fadeIn");
-  //     } else {
-  //       entry.target.classList.remove("animate-fadeIn");
-  //     }
-  //   });
-  // };
+  const elementInView = (el, dividend = 1) => {
+    const elementTop = el.getBoundingClientRect().top;
 
-  // const observer = new IntersectionObserver(callback);
+    return (
+      elementTop <=
+      (window.innerHeight || document.documentElement.clientHeight) / dividend
+    );
+  };
 
-  // const targets = document.querySelectorAll(".js-show-on-scroll");
-  // targets.forEach(function(target) {
-  //   target.classList.add("opacity-0");
-  //   observer.observe(target);
-  // });
-</script>
+  const elementOutofView = (el) => {
+    const elementTop = el.getBoundingClientRect().top;
+
+    return (
+      elementTop > (window.innerHeight || document.documentElement.clientHeight)
+    );
+  };
+
+  const displayScrollElement = (element) => {
+    element.classList.add("opacity-100");
+  };
+
+  const hideScrollElement = (element) => {
+    element.classList.remove("opacity-100");
+  };
+
+  const handleScrollAnimation = () => {
+    scrollElements.forEach((el) => {
+      if (elementInView(el, 1.25)) {
+        displayScrollElement(el);
+      } else if (elementOutofView(el)) {
+        hideScrollElement(el)
+      }
+    })
+  }
+
+  window.addEventListener("scroll", () => {
+    handleScrollAnimation();
+  });
+</script> -->
 
 </html>

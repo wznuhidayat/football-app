@@ -1,6 +1,6 @@
 <?php
 
-use App\Http\Controllers\Home;
+use App\Http\Controllers\Main;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -17,5 +17,8 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
-Route::get('/home', [Home::class, 'index']);
+Route::get('/main', [Main::class, 'index']);
+Route::get('/main/standigs', [Main::class, 'Standings']);
+Route::get('/main/matches', [Main::class, 'Matches']);
+Route::get('/main/clubs', [Main::class, 'Clubs']);
 
