@@ -48,40 +48,97 @@ class Main extends Controller
     }
     public function Matches()
     {
-        // $curl = curl_init();
+        $curl = curl_init();
 
-        // curl_setopt_array($curl, [
-        //     CURLOPT_URL => "https://api-football-beta.p.rapidapi.com/fixtures?to=2022-09-24&timezone=Asia%2FJakarta&season=2021&league=39&from=" . date('Y-m-d') . "",
-        //     CURLOPT_RETURNTRANSFER => true,
-        //     CURLOPT_FOLLOWLOCATION => true,
-        //     CURLOPT_ENCODING => "",
-        //     CURLOPT_MAXREDIRS => 10,
-        //     CURLOPT_TIMEOUT => 30,
-        //     CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
-        //     CURLOPT_CUSTOMREQUEST => "GET",
-        //     CURLOPT_HTTPHEADER => [
-        //         "x-rapidapi-host: api-football-beta.p.rapidapi.com",
-        //         "x-rapidapi-key: 0b0b1d9f51mshb9c676c3765bc8cp1082f9jsn62369aac2aed"
-        //     ],
-        // ]);
+        curl_setopt_array($curl, [
+            CURLOPT_URL => "https://api-football-beta.p.rapidapi.com/fixtures?to=2022-09-24&timezone=Asia%2FJakarta&season=2021&league=39&from=" . date('Y-m-d') . "",
+            CURLOPT_RETURNTRANSFER => true,
+            CURLOPT_FOLLOWLOCATION => true,
+            CURLOPT_ENCODING => "",
+            CURLOPT_MAXREDIRS => 10,
+            CURLOPT_TIMEOUT => 30,
+            CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+            CURLOPT_CUSTOMREQUEST => "GET",
+            CURLOPT_HTTPHEADER => [
+                "x-rapidapi-host: api-football-beta.p.rapidapi.com",
+                "x-rapidapi-key: 0b0b1d9f51mshb9c676c3765bc8cp1082f9jsn62369aac2aed"
+            ],
+        ]);
 
-        // $response = curl_exec($curl);
-        // $err = curl_error($curl);
+        $response = curl_exec($curl);
+        $err = curl_error($curl);
 
-        // curl_close($curl);
+        curl_close($curl);
 
-        // // if ($err) {
-        // //     echo "cURL Error #:" . $err;
-        // // } else {
-        // //     echo $response;
-        // // }
-        // $result = json_decode($response,true);
-
-        // $this->temp_paginate = $result['response'][0]['league']['standings'][0];
-        return view('matches');
+        if ($err) {
+            echo "cURL Error #:" . $err;
+        } else {
+            $result = json_decode($response,true);
+            $fixture = $result['response'];
+            $count = count($fixture);
+            for ($i = 0; $i < $count; $i++) {
+                for ($j = $i + 1; $j < $count; $j++) {
+                    if ($fixture[$i]['fixture']['timestamp'] > $fixture[$j]['fixture']['timestamp']) {
+                        $temp = $fixture[$i];
+                        $fixture[$i] = $fixture[$j];
+                        $fixture[$j] = $temp;
+                    }
+                }
+            }
+            return $fixture;
+        }
+       
+        // return view('matches');
     }
     public function Clubs()
     {
         return view('clubs');
+    }
+    public function Matchespage($page = 0,$limit=5)
+    {
+        $curl = curl_init();
+
+        curl_setopt_array($curl, [
+            CURLOPT_URL => "https://api-football-beta.p.rapidapi.com/fixtures?to=2022-09-24&timezone=Asia%2FJakarta&season=2021&league=39&from=" . date('Y-m-d') . "",
+            CURLOPT_RETURNTRANSFER => true,
+            CURLOPT_FOLLOWLOCATION => true,
+            CURLOPT_ENCODING => "",
+            CURLOPT_MAXREDIRS => 10,
+            CURLOPT_TIMEOUT => 30,
+            CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+            CURLOPT_CUSTOMREQUEST => "GET",
+            CURLOPT_HTTPHEADER => [
+                "x-rapidapi-host: api-football-beta.p.rapidapi.com",
+                "x-rapidapi-key: 0b0b1d9f51mshb9c676c3765bc8cp1082f9jsn62369aac2aed"
+            ],
+        ]);
+
+        $response = curl_exec($curl);
+        $err = curl_error($curl);
+
+        curl_close($curl);
+
+        if ($err) {
+            echo "cURL Error #:" . $err;
+        } else {
+            $result = json_decode($response,true);
+            $fixture = $result['response'];
+            $count = count($fixture);
+            for ($i = 0; $i < $count; $i++) {
+                for ($j = $i + 1; $j < $count; $j++) {
+                    if ($fixture[$i]['fixture']['timestamp'] > $fixture[$j]['fixture']['timestamp']) {
+                        $temp = $fixture[$i];
+                        $fixture[$i] = $fixture[$j];
+                        $fixture[$j] = $temp;
+                    }
+                }
+            }
+            $startIndex = ($page - 1)*$limit;
+            $endIndex = $page * $limit;
+
+
+            return array_slice($fixture,$startIndex,$endIndex);
+        }
+       
     }
 }
