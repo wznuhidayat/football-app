@@ -4,11 +4,15 @@
         <div class="container mx-auto px-6">
             {{-- <div class="rounded-lg bg-slate-100 p-5"> --}}
             <h1 class="text-5xl mb-5 font-bold">Matches</h1>
-            <div class="bg-gray-800 p-3 mb-3 animate-fade-in-down rounded-lg flex justify-between">
-                <h2 class="text-slate-100 text-lg ">Saturday</h2>
-                <h2 class="text-slate-100 text-lg ">29 Des 2021</h2>
+            
+
+            <div class="matches flex flex-wrap gap-4">
             </div>
-            <div class="flex flex-wrap gap-2 justify-between ">
+            
+            <div class="loader opacity-0">
+                <img src="{{ asset('images/loading-load.gif') }}" alt="" srcset="" class="animate-bounce w-24 h-w-24 mx-auto" id="loadMatches">
+            </div>
+            {{-- <div class="flex flex-wrap gap-2 justify-between ">
                 <div class="w-96 h-36 bg-slate-100 p-5 flex justify-between rounded-lg shadow-md animate-fade-in-up">
                     <div class="w-8/12 flex flex-col justify-center px-3 gap-3">
                         <div class="">
@@ -28,9 +32,7 @@
                         </div>
                     </div>
                 </div>
-
-
-            </div>
+            </div> --}}
             {{-- </div> --}}
         </div>
         </div>
