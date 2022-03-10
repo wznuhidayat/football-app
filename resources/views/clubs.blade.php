@@ -16,7 +16,7 @@
                 <?php foreach ($data as $club) : ?>
                     <div class="w-full md:w-72 h-72 bg-slate-100  py-8 px-8 flex flex-col justify-between rounded-lg shadow-md animate-fade-in-up mb-5">
                         <img src="{{ $club['team']['logo'] }}" alt=""
-                            class="inline object-cover w-20 h-20 mx-auto mb-5 border-2 border-gray-800 rounded-full">
+                            class="inline object-cover w-20 h-20 mx-auto mb-5">
                         <a href="" class="text-center"> {{ $club['team']['name'] }}</a>
                         <a href="" class="text-gray-600 text-center">{{ $club['venue']['name'] }}</a>
                         <a href="" class="text-gray-600 text-center mt-5 hover:text-black">

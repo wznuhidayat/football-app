@@ -22,5 +22,6 @@ Route::get('/main/standigs', [Main::class, 'Standings']);
 Route::get('/main/matches', [Main::class, 'Matches']);
 Route::get('/main/clubs', [Main::class, 'Clubs']);
 Route::get('/main/matchespage', [Main::class, 'Matchespage']);
+Route::get('/main/topscorers', [Main::class, 'topScorers']);
 Route::get('/main/matchespage/{page}/{limit}', [Main::class, 'Matchespage']);
 

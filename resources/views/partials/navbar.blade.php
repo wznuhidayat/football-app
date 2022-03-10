@@ -27,7 +27,7 @@
           <a href="/main/standigs" class="text-md hover:text-gray-500 duration-500 text-white ">Standing</a>
         </li>
         <li class="mx-4 my-6 md:my-0">
-          <a href="#" class="text-md hover:text-gray-500 duration-500 text-white ">Top Scorers</a>
+          <a href="/main/topscorers" class="text-md hover:text-gray-500 duration-500 text-white ">Top Scorers</a>
         </li>
         <li class="mx-4 my-6 md:my-0">
           <a href="/main/clubs" class="text-md hover:text-gray-500 duration-500 text-white ">Clubs</a>
