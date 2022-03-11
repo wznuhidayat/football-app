@@ -9,7 +9,7 @@
                 <h2 class="text-slate-100 text-lg ">29 Des 2021</h2>
             </div> --}}
             <hr>
-            <div class="bg-gray-800 p-3 mb-3 animate-fade-in-down rounded-lg flex justify-between">
+            <div class="bg-gray-800 p-3 mb-3 animate-fade-in-down rounded-lg">
                 <h2 class="text-slate-100 text-lg text-right">Season 2021/2022</h2>
                 </div>
             <div class="flex flex-wrap justify-between mt-3">
@@ -19,7 +19,7 @@
                             class="inline object-cover w-20 h-20 mx-auto mb-5">
                         <a href="" class="text-center"> {{ $club['team']['name'] }}</a>
                         <a href="" class="text-gray-600 text-center">{{ $club['venue']['name'] }}</a>
-                        <a href="" class="text-gray-600 text-center mt-5 hover:text-black">
+                        <a href="/main/clubinfo/{{ $club['team']['id'] }}" class="text-gray-600 text-center mt-5 hover:text-black">
                             <ion-icon name="arrow-forward-circle-outline" size="large"></ion-icon>
                         </a>
 
