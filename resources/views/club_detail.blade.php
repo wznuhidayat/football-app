@@ -8,13 +8,12 @@
                     <div class="col-span-1 flex flex-col justify-center mx-auto">
                         <img src="{{ $club['team']['logo'] }}" alt="" class="object-cover w-32">
                     </div>
-                    <div class="col-span-3 flex flex-col justify-center gap-2">
-                        <h2 class="text-white text-2xl font-bold">{{ $club['team']['name'] }}</h2>
-                        <h2 class="text-slate-200">Emirates Stadium</h2>
+                    <div class="col-span-2 lg:col-span-2 xl:col-span-3 flex flex-col justify-center gap-2">
+                        <h2 class="text-white text-lg lg:text-xl xl:text-2xl font-bold">{{ $club['team']['name'] }}</h2>
+                        <h2 class="text-slate-200 text-sm xl:text-md lg:text-md">Emirates Stadium</h2>
                         <img src="https://media.api-sports.io/flags/gb.svg" alt="" class="w-5">
                     </div>
-                    <div class="col-span-1 flex items-end py-10  mx-auto">
-
+                    <div class="col-span-1 lg:col-span-1 flex items-end py-10 mx-auto">
                         <?php $str = $club['form']; ?>
                         <td class="px-3 py-3 text-center text-sm">
                             <?php foreach( str_split(substr($str,strlen($str)-5,strlen($str))) as $splt) : ?>
@@ -30,12 +29,21 @@
                     </div>
                 </div>
             </div>
-            <div class="grid grid-cols-6 gap-4">
-                <div class="col-span-2 bg-slate-100 shadow-sm rounded-lg p-5">
+            <div class="grid grid-cols-6 gap-4 animate-fade-in-up">
+                <div class="col-span-6 lg:col-span-2 bg-slate-100 shadow-sm rounded-lg p-5">
                     <h2 class="text-lg font-bold mb-3">Card</h2>
+                    <?php $red = 0;
+                            $yellow = 0;
+                        foreach ($club['cards']['red'] as $clb) {
+                            $red += $clb['total'];
+                        }
+                        foreach ($club['cards']['yellow'] as $clb) {
+                            $yellow += $clb['total'];
+                        }
+                    ?>
                     <div class="grid grid-cols-2 gap-3 mb-5">
-                        <div class="bg-red-500 h-10 text-center flex flex-col justify-center">{{ count($club['cards']['red']) }}</div>
-                        <div class="bg-yellow-500 h-10 text-center flex flex-col justify-center">{{ count($club['cards']['yellow']) }}</div>
+                        <div class="bg-red-500 h-10 text-center flex flex-col justify-center">{{ $red }}</div>
+                        <div class="bg-yellow-500 h-10 text-center flex flex-col justify-center">{{ $yellow }}</div>
                     </div>
                     <h2 class="text-lg font-bold mb-3">Lineups</h2>
                     <div class="">
@@ -57,7 +65,7 @@
                         </table>
                     </div>
                 </div>
-                <div class="bg-slate-100 shadow-sm rounded-lg overflow-hidden p-5 col-start-3 col-end-7">
+                <div class="bg-slate-100 shadow-sm rounded-lg overflow-hidden p-5 md:col-start-3 md:col-end-7 col-span-6">
                     <h2 class="text-lg font-bold mb-3">Statistics</h2>
                     <table class="table-auto w-full">
                         <thead class="py-5 bg-gray-800 text-slate-100">

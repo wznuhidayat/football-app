@@ -9,7 +9,7 @@
             </div>
             <?php $i = 1 ?>
             <?php foreach ($players as $player) : ?>
-            <div class="w-full h-32 mt-3 bg-slate-100 grid grid-cols-8">
+            <div class="w-full h-32 mt-3 bg-slate-100 grid grid-cols-8 animate-fade-in-up">
                 <div class="col-span-1 px-4 lg:px-8 flex flex-col justify-center text-sm md:text-md lg:text-lg">{{$i}}</div>
                 <div class="col-span-2 lg:col-span-1 px-4 lg:px-8 flex flex-col justify-center">
                     <img src="{{ $player['player']['photo'] }}" alt="" class="object-cover w-13 lg:w-15 xl:w-20">

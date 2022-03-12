@@ -179,7 +179,7 @@ window.addEventListener("scroll", () => {
             clientHeight
         } = document.documentElement;
 
-        if (scrollTop + clientHeight >= scrollHeight - 5 &&
+        if (scrollTop + clientHeight >= scrollHeight - 1 &&
             hasMoreMatches(currentPage, limit, total)) {
             currentPage++;
             loadMatches(currentPage, limit);
