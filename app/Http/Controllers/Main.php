@@ -9,7 +9,47 @@ class Main extends Controller
     public $temp_paginate = [];
     public function index()
     {
-        return view('home_page');
+        $curl = curl_init();
+
+        curl_setopt_array($curl, [
+            CURLOPT_URL => "https://api-football-beta.p.rapidapi.com/fixtures?timezone=Asia%2FJakarta&season=2021&status=FT&league=39",
+            CURLOPT_RETURNTRANSFER => true,
+            CURLOPT_FOLLOWLOCATION => true,
+            CURLOPT_ENCODING => "",
+            CURLOPT_MAXREDIRS => 10,
+            CURLOPT_TIMEOUT => 30,
+            CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+            CURLOPT_CUSTOMREQUEST => "GET",
+            CURLOPT_HTTPHEADER => [
+                "x-rapidapi-host: api-football-beta.p.rapidapi.com",
+                "x-rapidapi-key: 0b0b1d9f51mshb9c676c3765bc8cp1082f9jsn62369aac2aed"
+            ],
+        ]);
+
+        $response = curl_exec($curl);
+        $err = curl_error($curl);
+
+        curl_close($curl);
+
+        if ($err) {
+            echo "cURL Error #:" . $err;
+        } else {
+            $result = json_decode($response, true);
+            $fixture = $result['response'];
+            $count = count($fixture);
+            for ($i = 0; $i < $count; $i++) {
+                for ($j = $i + 1; $j < $count; $j++) {
+                    if ($fixture[$i]['fixture']['timestamp'] < $fixture[$j]['fixture']['timestamp']) {
+                        $temp = $fixture[$i];
+                        $fixture[$i] = $fixture[$j];
+                        $fixture[$j] = $temp;
+                    }
+                }
+            }
+            $data['data'] = $fixture;
+            return view('home_page',$data);
+        }
+        
     }
     public function Standings()
     {
@@ -210,7 +250,7 @@ class Main extends Controller
         $curl = curl_init();
 
         curl_setopt_array($curl, [
-            CURLOPT_URL => "https://api-football-beta.p.rapidapi.com/teams/statistics?team=".$id."&season=2021&league=39",
+            CURLOPT_URL => "https://api-football-beta.p.rapidapi.com/teams/statistics?team=" . $id . "&season=2021&league=39",
             CURLOPT_RETURNTRANSFER => true,
             CURLOPT_FOLLOWLOCATION => true,
             CURLOPT_ENCODING => "",
@@ -235,7 +275,7 @@ class Main extends Controller
             $result = json_decode($response, true);
             $club = $result['response'];
             $data['club'] = $club;
-            return view('club_detail',$data);
+            return view('club_detail', $data);
         }
     }
 }
