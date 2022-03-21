@@ -1,3 +1,6 @@
 @tailwind base;
 @tailwind components;
+.top-navbar {
+  top: 50px !important;
+}
 @tailwind utilities;

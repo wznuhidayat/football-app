@@ -24,7 +24,7 @@
                 <a class="slidePrev left-2 md:left-9 lg:left-9 xl:left-9 2xl:left-9  cursor-pointer absolute">
                   <ion-icon name="chevron-back-circle"></ion-icon>
                 </a>
-                <a class="slideNext right-2 md:right-9 lg:right-9 xl:right-9 2xl:right-9 cursor-pointer absolute">
+                <a class="slideNext right-2 md:right-9 lg:right-9 xl:right-9 2xl:right-9 cursor-pointer absolute ">
                   <ion-icon name="chevron-forward-circle"></ion-icon>
                 </a>
             </div>
